@@ -1,78 +1,87 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, TrendingUp } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-craft-dark/90 to-craft-primary/80 z-10"></div>
-        <img
-          src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=2000"
-          alt="Handmade crafts"
-          className="w-full h-full object-cover"
-        />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50/30 to-yellow-50/40">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 -top-48 -left-48 bg-gradient-to-br from-craft-primary/20 to-craft-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-gradient-to-br from-craft-accent/20 to-craft-secondary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute w-64 h-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-craft-primary/10 to-craft-accent/10 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      {/* Floating Decoration Elements */}
+      {/* Floating Icons */}
       <div className="absolute top-20 left-10 animate-bounce">
-        <Sparkles className="text-craft-accent opacity-50" size={40} />
+        <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl">
+          <Sparkles className="text-craft-primary" size={32} />
+        </div>
       </div>
-      <div className="absolute bottom-20 right-10 animate-bounce delay-100">
-        <Sparkles className="text-craft-light opacity-50" size={30} />
+      <div className="absolute bottom-32 right-16 animate-bounce" style={{ animationDelay: '0.5s' }}>
+        <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl">
+          <Zap className="text-craft-accent" size={28} />
+        </div>
+      </div>
+      <div className="absolute top-1/3 right-20 animate-bounce" style={{ animationDelay: '1s' }}>
+        <div className="bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-xl">
+          <TrendingUp className="text-craft-secondary" size={24} />
+        </div>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 z-20 text-center animate-fade-in">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block bg-craft-accent/20 text-craft-light px-6 py-2 rounded-full text-sm font-semibold backdrop-blur-sm border border-craft-light/30">
-              ✨ Handcrafted with Love
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-8">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-craft-primary to-craft-secondary text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">
+              <Sparkles size={18} />
+              AI-Curated Home Decor Collection
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Discover Unique
-            <span className="block text-craft-accent">Handmade Treasures</span>
+          <h1 className="text-6xl md:text-8xl font-black text-craft-dark mb-8 leading-tight tracking-tighter">
+            Transform Your
+            <span className="block bg-gradient-to-r from-craft-primary via-craft-secondary to-craft-accent bg-clip-text text-transparent">
+              Living Space
+            </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-craft-light mb-10 max-w-2xl mx-auto">
-            Transform your home with artisan-crafted products that tell a story. 
-            Each piece is lovingly made by skilled craftspeople.
+          <p className="text-xl md:text-2xl text-craft-muted mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+            Discover handcrafted home decor powered by intelligent recommendations. 
+            Each piece is curated to bring elegance, warmth, and personality to your home.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="#products" onClick={(e) => {
               e.preventDefault();
               document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
             }}>
-              <button className="btn-primary group flex items-center gap-2">
-                Explore Products
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              <button className="btn-primary group flex items-center gap-3 text-lg">
+                Shop Collection
+                <ArrowRight className="group-hover:translate-x-2 transition-transform" size={22} />
               </button>
             </a>
             <a href="#about" onClick={(e) => {
               e.preventDefault();
               document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
             }}>
-              <button className="btn-secondary">
-                Our Story
+              <button className="btn-secondary text-lg">
+                Learn More
               </button>
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-4xl font-bold text-white mb-2">100+</div>
-              <div className="text-craft-light">Unique Products</div>
+          {/* Stats with Modern Design */}
+          <div className="grid grid-cols-3 gap-6 mt-20 max-w-4xl mx-auto">
+            <div className="glass-card rounded-3xl p-8 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-black bg-gradient-to-r from-craft-primary to-craft-secondary bg-clip-text text-transparent mb-2">100+</div>
+              <div className="text-craft-muted font-semibold">Premium Products</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-craft-light">Happy Customers</div>
+            <div className="glass-card rounded-3xl p-8 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-black bg-gradient-to-r from-craft-secondary to-craft-accent bg-clip-text text-transparent mb-2">2.5K+</div>
+              <div className="text-craft-muted font-semibold">Happy Customers</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-craft-light">Handcrafted</div>
+            <div className="glass-card rounded-3xl p-8 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-black bg-gradient-to-r from-craft-accent to-craft-primary bg-clip-text text-transparent mb-2">4.9★</div>
+              <div className="text-craft-muted font-semibold">Average Rating</div>
             </div>
           </div>
         </div>

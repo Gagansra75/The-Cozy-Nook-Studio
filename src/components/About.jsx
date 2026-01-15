@@ -1,4 +1,4 @@
-import { Heart, Award, Users, Leaf } from 'lucide-react';
+import { Heart, Award, Users, Sparkles } from 'lucide-react';
 
 const About = () => {
   const features = [
@@ -18,79 +18,85 @@ const About = () => {
       description: 'Your purchase directly supports local craftspeople and their families.',
     },
     {
-      icon: <Leaf className="w-8 h-8" />,
-      title: 'Eco-Friendly',
-      description: 'Sustainable practices and natural materials for a better tomorrow.',
+      icon: <Sparkles className="w-8 h-8" />,
+      title: 'AI-Curated',
+      description: 'Smart recommendations powered by AI to match your unique style preferences.',
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-white to-craft-light/20">
+    <section id="about" className="py-24 bg-gradient-to-b from-white via-orange-50/20 to-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-craft-primary/10 to-craft-secondary/10 px-6 py-2 rounded-full mb-6">
+            <span className="text-craft-primary font-bold">✨ Our Story</span>
+          </div>
           <h2 className="section-title">
-            The <span className="text-gradient">Cozy Nook Studio</span> Story
+            The <span className="bg-gradient-to-r from-craft-primary via-craft-secondary to-craft-accent bg-clip-text text-transparent">Cozy Nook Studio</span> Story
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We believe in the magic of handmade. Every product in our collection is a testament 
-            to traditional craftsmanship meeting modern design.
+          <p className="text-xl text-craft-muted max-w-3xl mx-auto font-medium">
+            We believe in the magic of handmade home decor powered by intelligent curation. Every piece in our collection is a testament 
+            to traditional craftsmanship meeting modern AI-enhanced design.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
           <div className="animate-fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?q=80&w=1000"
-              alt="Artisan at work"
-              className="rounded-2xl shadow-2xl"
-            />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-craft-primary/20 to-craft-secondary/20 rounded-3xl blur-2xl"></div>
+              <img
+                src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?q=80&w=1000"
+                alt="Artisan at work"
+                className="relative rounded-3xl shadow-2xl"
+              />
+            </div>
           </div>
           <div className="space-y-6 animate-fade-in">
-            <h3 className="text-3xl font-bold text-craft-dark">
-              Crafted by Hand, Created with Heart
+            <h3 className="text-4xl font-black text-craft-dark">
+              Crafted by Hand, <span className="bg-gradient-to-r from-craft-primary to-craft-secondary bg-clip-text text-transparent">Curated by AI</span>
             </h3>
-            <p className="text-gray-600 leading-relaxed">
-              The Cozy Nook Studio was born from a passion for preserving traditional craftsmanship 
-              while bringing unique, handmade products to modern homes. We work directly with 
-              talented artisans who pour their heart and soul into every piece.
+            <p className="text-craft-muted leading-relaxed text-lg">
+              The Cozy Nook Studio combines traditional craftsmanship with cutting-edge AI technology 
+              to bring unique, handmade home decor to modern living spaces. We work directly with 
+              talented artisans while using intelligent algorithms to match you with perfect pieces.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              From wooden bookends to decorative ornaments, each item tells a story of 
-              skill, patience, and artistic vision. When you choose The Cozy Nook Studio, you're not 
-              just buying a product – you're becoming part of a movement that values quality, 
+            <p className="text-craft-muted leading-relaxed text-lg">
+              From elegant serving platters to decorative wall art, each item tells a story of 
+              skill, patience, and artistic vision enhanced by smart curation. When you choose The Cozy Nook Studio, you're not 
+              just buying decor – you're experiencing the perfect fusion of human creativity and AI precision. 
               sustainability, and human creativity.
             </p>
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-8 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-craft-primary">5+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-5xl font-black bg-gradient-to-r from-craft-primary to-craft-secondary bg-clip-text text-transparent">5+</div>
+                <div className="text-sm text-craft-muted font-semibold mt-1">Years Experience</div>
               </div>
-              <div className="text-center border-l-2 border-craft-light pl-4">
-                <div className="text-3xl font-bold text-craft-primary">50+</div>
-                <div className="text-sm text-gray-600">Skilled Artisans</div>
+              <div className="text-center">
+                <div className="text-5xl font-black bg-gradient-to-r from-craft-secondary to-craft-accent bg-clip-text text-transparent">50+</div>
+                <div className="text-sm text-craft-muted font-semibold mt-1">Skilled Artisans</div>
               </div>
-              <div className="text-center border-l-2 border-craft-light pl-4">
-                <div className="text-3xl font-bold text-craft-primary">10+</div>
-                <div className="text-sm text-gray-600">Product Categories</div>
+              <div className="text-center">
+                <div className="text-5xl font-black bg-gradient-to-r from-craft-accent to-craft-primary bg-clip-text text-transparent">10K+</div>
+                <div className="text-sm text-craft-muted font-semibold mt-1">Happy Customers</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg card-hover text-center"
+              className="glass-card rounded-3xl p-8 card-hover text-center group border border-gray-200/50"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-craft-primary/10 rounded-full mb-4 text-craft-primary">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-craft-primary/10 to-craft-secondary/10 rounded-2xl mb-6 text-craft-primary group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
-              <h4 className="text-xl font-semibold text-craft-dark mb-2">
+              <h4 className="text-xl font-bold text-craft-dark mb-3">
                 {feature.title}
               </h4>
-              <p className="text-gray-600">
+              <p className="text-craft-muted">
                 {feature.description}
               </p>
             </div>

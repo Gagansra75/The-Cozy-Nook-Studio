@@ -8,16 +8,21 @@ export default {
     extend: {
       colors: {
         craft: {
-          primary: '#8B4513',
-          secondary: '#D2691E',
-          accent: '#CD853F',
-          light: '#F5DEB3',
-          dark: '#654321',
+          primary: '#c17554',
+          secondary: '#d4a574',
+          accent: '#a0826d',
+          light: '#f5efe7',
+          dark: '#4a3428',
+          muted: '#8b7355',
         },
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
+        display: ['Inter', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-mesh': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       },
     },
   },

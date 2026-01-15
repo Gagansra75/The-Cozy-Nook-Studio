@@ -87,10 +87,7 @@ const ProductModal = ({ product, isOpen, onClose }) => {
                 <div className="mb-6">
                   <h3 className="font-semibold text-lg mb-2">Description</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    This exquisite handcrafted piece is made with premium materials 
-                    by skilled artisans. Each item is unique and showcases traditional 
-                    craftsmanship with a modern touch. Perfect for adding character to 
-                    your home or as a thoughtful gift.
+                    {product.description || 'This exquisite handcrafted piece is made with premium materials by skilled artisans. Each item is unique and showcases traditional craftsmanship with a modern touch. Perfect for adding character to your home or as a thoughtful gift.'}
                   </p>
                 </div>
 

@@ -11,8 +11,8 @@ const PromoBanner = () => {
       <div className="container mx-auto flex items-center justify-center gap-2 relative z-10">
         <Sparkles size={20} className="animate-pulse" />
         <p className="text-sm md:text-base font-medium text-center">
-          🎉 New Year Sale! Get <span className="font-bold">20% OFF</span> on all handcrafted items! 
-          <span className="hidden sm:inline"> Use code: <span className="font-bold">CRAFT2026</span></span>
+          🎉 New Year Sale! Get <span className="font-bold">20% OFF</span> on all home decor! 
+          <span className="hidden sm:inline"> Use code: <span className="font-bold">DECOR2026</span></span>
         </p>
         <Sparkles size={20} className="animate-pulse" />
       </div>

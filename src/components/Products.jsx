@@ -1,5 +1,6 @@
 import { ShoppingCart, Eye, Star } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from './ShoppingCart';
 import ProductModal from './ProductModal';
 
@@ -18,182 +19,121 @@ const Products = () => {
     addToCart(product);
   };
 
-  const categories = [
-    'All Products',
-    'Home Decor',
-    'Bookends',
-    'Wall Art',
-    'Ornaments',
-    'Kitchen',
-    'Toys & Games',
-    'Accessories',
-  ];
-
   const products = [
     {
       id: 1,
-      name: 'Handcrafted Wooden Bookend',
-      category: 'Bookends',
-      price: 45.99,
-      image: 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?q=80&w=500',
-      rating: 4.8,
-      reviews: 124,
+      name: 'Pizza Wooden Serving Platter Tray',
+      category: 'Home Decor',
+      price: 34.99,
+      image: '/products/Pizza Wooden Serving Platter Tray-1.png',
+      rating: 5.0,
+      reviews: 48,
+      description: 'Elevate your dining experience with this beautifully handcrafted wooden pizza serving platter. Perfect for family gatherings and dinner parties, this artisan tray adds rustic charm to any table setting. Its natural wood grain and spacious design make it ideal for serving pizzas, charcuterie boards, or appetizers.',
     },
     {
       id: 2,
-      name: 'Decorative Wall Hanging',
-      category: 'Wall Art',
-      price: 32.99,
-      image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=500',
-      rating: 4.9,
-      reviews: 89,
+      name: 'Cotton Black Grid Throw Blanket',
+      category: 'Home Decor',
+      price: 24.99,
+      image: '/products/Cotton Black Grid Throw Blanket-1.png',
+      rating: 5.0,
+      reviews: 62,
+      description: 'Wrap yourself in comfort with this premium cotton throw blanket featuring a modern grid pattern. The perfect blend of style and coziness, this versatile blanket complements any home décor. Ideal for your sofa, bed, or as a thoughtful gift for loved ones.',
     },
     {
       id: 3,
-      name: 'Rustic Candle Holder',
+      name: 'Walking Cane',
       category: 'Home Decor',
-      price: 28.99,
-      image: 'https://images.unsplash.com/photo-1602874801006-8e31c6d0f315?q=80&w=500',
-      rating: 4.7,
-      reviews: 156,
+      price: 39.99,
+      image: '/products/Walking-Cane-1.png',
+      rating: 5.0,
+      reviews: 35,
+      description: 'Combine elegance with functionality with this beautifully crafted walking cane. Expertly designed for both support and style, this cane features exquisite detailing and a comfortable grip. Makes a distinguished accessory for daily use or special occasions.',
     },
     {
       id: 4,
-      name: 'Ceramic Flower Vase',
+      name: 'Large Wall Mounted Hanging Angel Flying Wing',
       category: 'Home Decor',
-      price: 38.99,
-      image: 'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=500',
-      rating: 4.6,
-      reviews: 98,
-    },
-    {
-      id: 5,
-      name: 'Wooden Chess Set',
-      category: 'Toys & Games',
-      price: 89.99,
-      image: 'https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=500',
+      price: 74.99,
+      image: '/products/Large Wall Mounted Hanging Angel Flying Wing-1.png',
       rating: 5.0,
-      reviews: 203,
-    },
-    {
-      id: 6,
-      name: 'Marble Soap Dish',
-      category: 'Accessories',
-      price: 24.99,
-      image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=500',
-      rating: 4.8,
-      reviews: 142,
-    },
-    {
-      id: 7,
-      name: 'Hand-Painted Ornament',
-      category: 'Ornaments',
-      price: 18.99,
-      image: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=500',
-      rating: 4.9,
-      reviews: 187,
-    },
-    {
-      id: 8,
-      name: 'Wooden Cutting Board',
-      category: 'Kitchen',
-      price: 42.99,
-      image: 'https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?q=80&w=500',
-      rating: 4.7,
-      reviews: 215,
+      reviews: 71,
+      description: 'Transform your space into a heavenly sanctuary with these stunning angel wings. This majestic wall décor piece adds a touch of ethereal beauty and spiritual elegance to any room. Perfect for creating a dramatic focal point in living rooms, bedrooms, or meditation spaces.',
     },
   ];
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-24 bg-gradient-to-b from-white via-amber-50/20 to-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-craft-primary/10 to-craft-secondary/10 px-6 py-2 rounded-full mb-6">
+            <span className="text-craft-primary font-bold">✨ Featured Collection</span>
+          </div>
           <h2 className="section-title">
-            Our <span className="text-gradient">Handcrafted</span> Collection
+            Premium <span className="bg-gradient-to-r from-craft-primary via-craft-secondary to-craft-accent bg-clip-text text-transparent">Home Decor</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our curated selection of artisan-made products. More products coming soon!
+          <p className="text-xl text-craft-muted max-w-3xl mx-auto font-medium">
+            AI-curated handcrafted pieces designed to transform your living space
           </p>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                index === 0
-                  ? 'bg-craft-primary text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-craft-primary hover:text-white'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
         </div>
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
+          {products.map((product, index) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg card-hover group"
+              className="glass-card rounded-3xl overflow-hidden card-hover group border border-gray-200/50"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-craft-primary/10 to-craft-secondary/10 z-0"></div>
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="relative w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
                   <button 
                     onClick={() => handleQuickView(product)}
-                    className="bg-white p-3 rounded-full hover:bg-craft-primary hover:text-white transition-colors"
+                    className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl hover:bg-gradient-to-r hover:from-craft-primary hover:to-craft-secondary hover:text-white transition-all transform hover:scale-110 shadow-xl"
                   >
-                    <Eye size={20} />
+                    <Eye size={22} />
                   </button>
                   <button 
                     onClick={(e) => handleAddToCart(product, e)}
-                    className="bg-white p-3 rounded-full hover:bg-craft-primary hover:text-white transition-colors"
+                    className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl hover:bg-gradient-to-r hover:from-craft-primary hover:to-craft-secondary hover:text-white transition-all transform hover:scale-110 shadow-xl"
                   >
-                    <ShoppingCart size={20} />
+                    <ShoppingCart size={22} />
                   </button>
                 </div>
-                <div className="absolute top-3 right-3 bg-craft-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  New
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-craft-accent to-craft-secondary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                  🔥 Hot
                 </div>
               </div>
 
-              <div className="p-5">
-                <div className="text-sm text-craft-secondary font-medium mb-2">
-                  {product.category}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-craft-primary bg-craft-primary/10 px-3 py-1 rounded-full">
+                    {product.category}
+                  </span>
+                  <div className="flex items-center gap-1">
+                    <Star size={14} className="fill-yellow-400 text-yellow-400" />
+                    <span className="text-sm font-bold text-craft-dark">{product.rating}</span>
+                    <span className="text-xs text-craft-muted">({product.reviews})</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-craft-dark mb-2 group-hover:text-craft-primary transition-colors">
+                <h3 className="text-lg font-bold text-craft-dark mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-craft-primary group-hover:to-craft-secondary group-hover:bg-clip-text transition-all line-clamp-2">
                   {product.name}
                 </h3>
-                <div className="flex items-center gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className={`${
-                        i < Math.floor(product.rating)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'text-gray-300'
-                      }`}
-                    />
-                  ))}
-                  <span className="text-sm text-gray-500 ml-1">
-                    ({product.reviews})
-                  </span>
-                </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-craft-primary">
-                    ${product.price}
-                  </span>
+                  <div>
+                    <span className="text-3xl font-black bg-gradient-to-r from-craft-primary to-craft-secondary bg-clip-text text-transparent">
+                      ${product.price}
+                    </span>
+                  </div>
                   <button 
                     onClick={(e) => handleAddToCart(product, e)}
-                    className="bg-craft-primary text-white p-2 rounded-lg hover:bg-craft-dark transition-colors"
+                    className="bg-gradient-to-r from-craft-primary to-craft-secondary text-white p-3 rounded-2xl hover:shadow-xl hover:shadow-craft-primary/50 transition-all transform hover:scale-110"
                   >
                     <ShoppingCart size={20} />
                   </button>
@@ -204,24 +144,32 @@ const Products = () => {
         </div>
 
         {/* Load More */}
-        <div className="text-center mt-12">
-          <button className="btn-primary">
-            View All Products
-          </button>
+        <div className="text-center mt-16">
+          <Link to="/products">
+            <button className="btn-primary text-lg">
+              Explore Full Collection →
+            </button>
+          </Link>
         </div>
 
         {/* Call to Action Banner */}
-        <div className="mt-20 bg-gradient-to-r from-craft-primary to-craft-secondary rounded-2xl p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">
-            Looking for Custom Orders?
-          </h3>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            We can create bespoke handcrafted items tailored to your specific needs. 
-            Contact us to discuss your vision!
-          </p>
-          <button className="bg-white text-craft-primary px-8 py-3 rounded-lg font-semibold hover:bg-craft-light transition-colors">
-            Contact Us
-          </button>
+        <div className="mt-24 relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-craft-primary via-craft-secondary to-craft-accent"></div>
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute w-96 h-96 -top-48 -left-48 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-white rounded-full blur-3xl"></div>
+          </div>
+          <div className="relative p-16 text-center text-white">
+            <h3 className="text-4xl md:text-5xl font-black mb-6">
+              🎨 Looking for Custom Designs?
+            </h3>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-medium opacity-95">
+              Our AI-powered design team can create bespoke home decor pieces perfectly tailored to your unique space and style preferences.
+            </p>
+            <button className="bg-white text-craft-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+              Get Started Free →
+            </button>
+          </div>
         </div>
       </div>
 
