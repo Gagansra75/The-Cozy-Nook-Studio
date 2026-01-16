@@ -3,10 +3,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ShoppingCart, { CartProvider } from './components/ShoppingCart';
 import BackToTop from './components/BackToTop';
-import PromoBanner from './components/PromoBanner';
 import Home from './pages/Home';
 import ProductsPage from './pages/ProductsPage';
 import Checkout from './pages/Checkout';
+import CustomDesign from './pages/CustomDesign';
 import './App.css';
 
 function App() {
@@ -14,12 +14,12 @@ function App() {
     <CartProvider>
       <Router>
         <div className="min-h-screen">
-          <PromoBanner />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/custom-design" element={<CustomDesign />} />
           </Routes>
           <Footer />
           <ShoppingCart />

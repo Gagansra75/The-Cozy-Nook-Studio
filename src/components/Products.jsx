@@ -166,9 +166,11 @@ const Products = () => {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-medium opacity-95">
               Our AI-powered design team can create bespoke home decor pieces perfectly tailored to your unique space and style preferences.
             </p>
-            <button className="bg-white text-craft-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
-              Get Started Free →
-            </button>
+            <Link to="/custom-design">
+              <button className="bg-white text-craft-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                Get Started Free →
+              </button>
+            </Link>
           </div>
         </div>
       </div>
