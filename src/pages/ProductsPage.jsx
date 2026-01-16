@@ -70,6 +70,26 @@ const ProductsPage = () => {
         'products/large-wall-mounted-hanging-angel-flying-wing-3.png',
       ],
     },
+    {
+      id: 5,
+      name: 'Mosaic Glass Tealight',
+      price: 11.99,
+      category: 'Home Decor',
+      rating: 5.0,
+      reviews: 89,
+      description: 'Create a warm, enchanting atmosphere with this exquisite mosaic glass tealight holder. Featuring intricate handcrafted glass work with vibrant colors, each piece reflects and refracts candlelight to create mesmerizing patterns. Perfect for romantic dinners, meditation spaces, or adding a touch of bohemian elegance to any room.',
+      image: 'products/mosaic-glass-tealight-1.jpg',
+      images: [
+        'products/mosaic-glass-tealight-1.jpg',
+        'products/mosaic-glass-tealight-2.jpg',
+        'products/mosaic-glass-tealight-3.jpg',
+        'products/mosaic-glass-tealight-4.jpg',
+        'products/mosaic-glass-tealight-5.jpg',
+        'products/mosaic-glass-tealight-6.jpg',
+        'products/mosaic-glass-tealight-7.jpg',
+        'products/mosaic-glass-tealight-8.jpg',
+      ],
+    },
   ];
 
   const handleProductClick = (product, e) => {

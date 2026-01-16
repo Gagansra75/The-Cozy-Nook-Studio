@@ -60,6 +60,16 @@ const Products = () => {
       reviews: 71,
       description: 'Transform your space into a heavenly sanctuary with these stunning angel wings. This majestic wall décor piece adds a touch of ethereal beauty and spiritual elegance to any room. Perfect for creating a dramatic focal point in living rooms, bedrooms, or meditation spaces.',
     },
+    {
+      id: 5,
+      name: 'Mosaic Glass Tealight',
+      category: 'Home Decor',
+      price: 11.99,
+      image: 'products/mosaic-glass-tealight-1.jpg',
+      rating: 5.0,
+      reviews: 89,
+      description: 'Create a warm, enchanting atmosphere with this exquisite mosaic glass tealight holder. Featuring intricate handcrafted glass work with vibrant colors, each piece reflects and refracts candlelight to create mesmerizing patterns. Perfect for romantic dinners, meditation spaces, or adding a touch of bohemian elegance to any room.',
+    },
   ];
 
   return (
